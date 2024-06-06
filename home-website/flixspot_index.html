@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlixSpot</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="flixspot_style.css">
+  <link rel="shortcut icon" href="/images/shlogo.png"/> 
+  <script src="https://kit.fontawesome.com/d38640634e.js" crossorigin="anonymous"></script>
+</head>
+  <body>
+   <nav>
+     <a href="#" class="logo"></a>
+       <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#category">Category</a></li>
+       
+        <li><a href="#premium">Premium</a></li>
+        <li><a href="http://127.0.0.1:5500/eagle-tv/home-website/form/sign_in.html">Log in</a></li>
+       </ul>
+       <div class="search">
+        <input type="text" class="search-bar" placeholder="Search Your Favourite Movie" id="search-bar">
+        <button id="button1" class="search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+        </button>
+        <div id="suggestions" class="dropdown-content"></div>
+      </div>
+      
+  
+   </nav>
+    <header class="home">
+      <video class="video-slide active" src="video/1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="./video/2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video/3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video/4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video/5.mp4" autoplay muted loop></video>
+        <div class="content active">
+          <h1>FastX</h1>
+          <p>Over many missions and against impossible odds, Dom Toretto and his family have outsmarted<br>
+             and outdriven every foe in their path. Now, they must confront the most lethal opponent they've<br>
+             ever faced.A terrifying threat emerges from the shadows of the past to shatter Dom's world and <br>
+             destroy everything and everyone he loves.</p>
+            
+        </div>
+        <div class="content">
+          <h1>John Wick</h1>
+          <p>With the price on his head ever increasing, legendary hit man John Wick takes his <br>
+             fight against the High Table global as he seeks out the most powerful players in the  <br>
+             underworld, from New York to Paris to Japan to Berlin. John takes refuge at Osaka <br>
+             Continental, run by his friend Shimazu Koji.
+              </p>
+              
+        </div>
+        <div class="content">
+          <h1>GOTG Vol. 3</h1>
+          <p>Still reeling from the loss of Gamora, Peter Quill must rally his team to defend the <br>
+             universe and protect one of their own. If the mission is not completely successful, it <br>
+             could possibly lead to the end of the Guardians as we know them.After Adam overpowers <br>
+             them and critically wounds Rocket, he is stabbed by Nebula and forced to flee.
+              </p>
+             
+        </div>
+        <div class="content">
+          <h1>The Flash</h1>
+          <p>Worlds collide when the Flash uses his superpowers to travel back in time to change the <br>
+             events of the past. However, when his attempt to save his family inadvertently alters the <br>
+             future, he becomes trapped in a reality in which General Zod has returned, threatening annihilation <br>
+             the Flash looks to coax a very different Batman out of retirement and rescue an imprisoned Kryptonian 
+              </p>
+              
+        </div>
+        <div class="content">
+          <h1>Evil Dead Rise</h1>
+          <p>A road-weary Beth pays an overdue visit to her older sister Ellie, who is raising <br>
+             three kids on her own in a cramped L.A apartment.A reunion between two estranged <br>
+             sisters gets cut short by the rise of flesh-possessing demons,thrusting them into <br>
+             a primal battle for survival as they face the most nightmarish version of family imaginable.
+              </p>
+              <a href="/video/e5.mp4" target="_self" class="wt">Watch Trailor</a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+      </header>
+      <!-- UPCOMING MOVIE -->
+      <h2 class="category-title">UPCOMING</h2>
+      <div class="container" id="movie-list">
+        <!-- Movies will be dynamically added here -->
+      </div>
+    
+      <div class="modal" id="myModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="movie-details">
+            <!-- Movie details will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+      <div class="w3-bar">
+        <a href="#" class="w3-button" id="prevPage" >&laquo;</a>
+        <a href="#" class="w3-button" id="nextPage">&raquo;</a>
+      </div>
+      <!--
+        - #CATEGORY SECTION
+      -->
+      <section class="category" id="category">
+
+        <h2 class="section-heading">Category</h2>
+
+        <div class="category-grid">
+
+          <div class="category-card">
+            <img src="./images/action.jpg" alt="" class="card-img">
+            <div class="name">Action</div>
+            <div class="total">100</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./images/comedy.jpg" alt="" class="card-img">
+            <div class="name">Comedy</div>
+            <div class="total">50</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./images/thriller.webp" alt="" class="card-img">
+            <div class="name">Thriller</div>
+            <div class="total">20</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./images/horror.jpg" alt="" class="card-img">
+            <div class="name">Horror</div>
+            <div class="total">80</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./images/adventure.jpg" alt="" class="card-img">
+            <div class="name">Adventure</div>
+            <div class="total">100</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./images/animated.jpg" alt="" class="card-img">
+            <div class="name">Animated</div>
+            <div class="total">50</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./images/crime.jpg" alt="" class="card-img">
+            <div class="name">Crime</div>
+            <div class="total">20</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./images/sci-fi.jpg" alt="" class="card-img">
+            <div class="name">SCI-FI</div>
+            <div class="total">80</div>
+          </div>
+
+        </div>
+
+      </section>
+      <!-- PREMIUM SECTION -->
+      <section class="premium" id="premium">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Gói tháng</h5>
+            <p class="card-text">-Không bị giới hạn phim.</p>
+            <p class="card-text">-Được sử dụng tính năng đề cử phim.</p>
+            <p class="card-text" id="price">8.99$</p>
+            <a href="#" class="btn btn-primary">BUY</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Gói năm</h5>
+            <p class="card-text">-Không bị giới hạn phim.</p>
+            <p class="card-text">-Được sử dụng tính năng đề cử phim.</p>
+            <p class="card-text" id="price">99.99$</p>
+            <a href="#" class="btn btn-primary">BUY</a>
+          </div>
+        </div>
+      </section>
+      <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">Top</button>
+   
+
+
+      <footer id="footer">
+        <a href="https://www.instagram.com/"><i class="social-icon fa fa-instagram"></a></i></a>
+        <a href="https://twitter.com/narendramodi?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="social-icon fa fa-twitter"></i></a>
+        <a href="https://www.reddit.com/t/narendra_modi/"><i class="social-icon fa fa-reddit"></i></a>
+        <a href="https://www.google.com/intl/en_in/gmail/about/"><i class="social-icon fa fa-envelope"></i></a>
+        <a href="https://web.telegram.org/a/"><i class="social-icon fa fa-telegram"></i></a>
+        <a href="https://www.youtube.com/channel/UCeqq4LsAYnRCCRWj3ma-wTg"><i class="social-icon fa fa-youtube"></i></a>
+        <p>Thankyou For Visiting</p>
+      </footer>
+      <script src="flixspot_script.js"></script>
+      <script src="script.js"></script>
+      <script src="search.js"></script>
+      </body>
+</html>
