@@ -268,3 +268,4 @@ function fetchCategory(category) {
     })
     .catch(error => console.error('Error fetching data:', error));
 }
+document.getElementById("feature_film").addEventListener("click", fetchCategory)

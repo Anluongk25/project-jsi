@@ -12,24 +12,21 @@
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create Account</h1>
-			
 			<span>or use your email for registration</span>
 			<input type="text" id="name" placeholder="Name" />
 			<input type="email" id="email" placeholder="Email" />
 			<input type="password" id="password" placeholder="Password" />
-			<button id="sign_up" onclick="createUser()">Sign Up</button>
+			<button type="button" id="sign_up" onclick="createUser()">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
 		<form action="#">
 			<h1>Sign in</h1>
-			
 			<span>or use your account</span>
 			<input type="email" id="emailInput" placeholder="Email" />
 			<input type="password" id="passwordInput" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
-			<button id="log_in" onclick="userLogin()">Sign In</button>
-			
+			<button type="button" id="log_in" onclick="userLogin()">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -48,14 +45,17 @@
 	</div>
 </div>
 
-
+<div id="user-avatar" style="display: none;">
+    <img id="avatar" src="" alt="User Avatar" />
+    <span id="user-email"></span>
+</div>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-	<script src="./sign_in.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="./sign_in.js"></script>
 </body>
 </html>
