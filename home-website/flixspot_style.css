@@ -410,21 +410,91 @@ header{
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 20px;
- 
+ gap: 20px; /* add some space between the cards*/
 }
 .movie-card {
   width: 200px;
   margin-bottom: 20px;
   text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
 }
 .movie-card img {
   width: 100%;
-  height: 300px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.3s ease;
+  height: 250px;
+}
+
+.movie-card h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #333; /* Darker color for the title */
+}
+
+.movie-card p {
+  font-size: 0.9em;
+  color: #666; /* Lighter color for the year text */
+}
+
+.movie-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7));
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.movie-card:hover::before {
+  opacity: 1;
+}
+
+.movie-card img:hover {
+  transform: scale(1.05);
+}
+
+.movie-card h2, .movie-card p {
+  z-index: 2;
+  position: relative;
+}
+
+.episode-button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 8px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.episode-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
 }
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 75px;
   width: 100%;
@@ -544,4 +614,9 @@ header{
   padding: 15px; 
   border-radius: 4px
 }
-
+.movie-list1 {
+  display: none; /* Initially hidden */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
